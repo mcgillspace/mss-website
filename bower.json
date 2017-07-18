@@ -1,0 +1,25 @@
+{
+  "name": "conference",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Angus McLean <amclean@sti.systems>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-prettyPhoto": "^3.1.6",
+    "jquery-backstretch": "^2.1.16",
+    "modernizr": "^3.5.0",
+    "jquery-countdown": "^0.1.4",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
+}
