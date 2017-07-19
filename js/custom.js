@@ -14,7 +14,7 @@ var sub_successBoxColor="f9ffef";
 var sub_successBoxBorderStyle="solid";
 var sub_successBox_Border_Color="bede8f";
 var sub_textColor="7a994c";
-jQuery.backstretch(["../img/slider/slide1.jpg","../img/slider/slide2.jpg","../img/slider/slide3.jpg"],{fade:1000,duration:7000});
+jQuery.backstretch(["img/slider/slide1.jpg","img/slider/slide2.jpg","img/slider/slide3.jpg"],{fade:1000,duration:7000});
 WebFontConfig={google:{families:['Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic:latin']}};
 (function(){var wf=document.createElement('script');
 wf.src=('https:'==document.location.protocol?'https':'http')+'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
