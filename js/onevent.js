@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+    var END_DATE = "October 5, 2017 8:00:00";
+
     setTimeout(function() {
         $('#options').animate({
             left: '-180px'
@@ -111,15 +114,14 @@ $(document).ready(function() {
     $(".container").fitVids();
     $('#schedule .nav-tabs li').append('<span class="arrow"></span>');
     $('#schedule .nav-tabs li span.arrow').hide();
-    var endDate = "June 7, 2017 15:00:00";
     $('.countdown.styled').countdown({
-        date: endDate,
+        date: END_DATE,
         render: function(data) {
             var years = this.leadingZeros(data.years, 2);
             if (years != '00') {
-                $(this.el).html("<div><span>" + this.leadingZeros(data.years, 2) + " </span><strong>years</strong></div><div><span>" + this.leadingZeros(data.days, 3) + " </span><strong>days</strong></div><div><span>" + this.leadingZeros(data.hours, 2) + "  </span><strong>hrs</strong></div><div><span>" + this.leadingZeros(data.min, 2) + "</span><strong>min</strong></div><div><span>" + this.leadingZeros(data.sec, 2) + " </span><strong>sec</strong></div>");
+                $(this.el).html("<div><span>" + this.leadingZeros(data.years, 2) + " </span><strong>years</strong></div><div><span>" + this.leadingZeros(data.days, 2) + " </span><strong>days</strong></div><div><span>" + this.leadingZeros(data.hours, 2) + "  </span><strong>hrs</strong></div><div><span>" + this.leadingZeros(data.min, 2) + "</span><strong>min</strong></div><div><span>" + this.leadingZeros(data.sec, 2) + " </span><strong>sec</strong></div>");
             } else {
-                $(this.el).html("<div><span>" + this.leadingZeros(data.days, 3) + " </span><strong>days</strong></div><div><span>" + this.leadingZeros(data.hours, 2) + "  </span><strong>hrs</strong></div><div><span>" + this.leadingZeros(data.min, 2) + "</span><strong>min</strong></div><div><span>" + this.leadingZeros(data.sec, 2) + " </span><strong>sec</strong></div>");
+                $(this.el).html("<div><span>" + this.leadingZeros(data.days, 2) + " </span><strong>days</strong></div><div><span>" + this.leadingZeros(data.hours, 2) + "  </span><strong>hrs</strong></div><div><span>" + this.leadingZeros(data.min, 2) + "</span><strong>min</strong></div><div><span>" + this.leadingZeros(data.sec, 2) + " </span><strong>sec</strong></div>");
             }
         }
     });

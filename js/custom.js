@@ -1,4 +1,4 @@
-var main_color = "ff6d40";
+var main_color = "ff0000";
 var page_background_color = "e6e6e6";
 var Heading_Font = "Roboto";
 var Site_Font = "Roboto";
