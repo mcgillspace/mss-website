@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <title>:: OnEvent - Special Event Landing Page Template ::</title>
+  <title>Montreal Space Symposium</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
   <link rel="stylesheet" href="css/style.css"/>
@@ -42,9 +42,8 @@
                 </div>
                 <nav>
                   <ul id="Navigation" class="list-inline collapse navbar-collapse">
-                    <li><a href="#schedule" title="Schedule">Schedule</a></li>
                     <li><a href="#speakers" title="Speakers">Speakers</a></li>
-                    <li><a href="#partners" title="Partners">Partners</a></li>
+                    <li><a href="#partners" title="Sponsors">Sponsors</a></li>
                     <li><a href="#faq" title="FAQ">FAQ</a></li>
                     <li><a href="#venue" title="Venue">Venue</a></li>
                     <li><a href="#footer" title="Subscribe to Our Newsletter">Subscribe</a></li>
@@ -67,15 +66,25 @@
             </div>
             <div class="countdown styled"></div>
             <a href="#" title="Register For This Event" class="btn register-trigger"><i class="fa fa-plus-circle"></i> Register For this event</a>
-            <form id="register" method="post" action="form/register.php">
+            <!-- <form id="register"> -->
+            <form action="//mcgillspace.us16.list-manage.com/subscribe/post?u=6440336a0de6185994638b439&amp;id=fe5dcc06e9" method="post" id="register" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
               <div class="field-wrapper">
                 <h3 class="regHeading">Register For This <span>Event</span></h3>
                 <div class="row">
                   <div class="col-md-6 form-row">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name"/>
+                    <div class="col-md-6" style="padding:0px 5px 0px 5px;">
+                      <input type="text" class="form-control" id="firstname" name="FNAME" placeholder="First Name"/>
+                      <!-- <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name"/> -->
+                    </div>
+                    <div class="col-md-6" style="padding:0px 5px 0px 5px;">
+                      <input type="text" class="form-control" id="lastname" name="LNAME" placeholder="Last Name"/>
+                      <!-- <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name"/> -->
+                    </div>
+
                   </div>
                   <div class="col-md-6 form-row">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email"/>
+                    <input type="email" class="form-control" id="email" name="EMAIL" placeholder="Your Email"/>
+                    <!-- <input type="email" class="form-control" id="email" name="email" placeholder="Your Email"/> -->
                   </div>
                 </div>
                 <input type="submit" value="Submit" class="btn btn-custom btn-lg" id="submit" name="submit"/>
@@ -282,67 +291,18 @@
         <div class="section clearfix bottom-margin">
           <header class="page-head colored clearfix">
             <h2>Speakers of the Event</h2>
-            <p class="text-muted">We’ve got expert’s speech from around the world </p>
+            <p class="text-muted">We’ve got expert speakers from all walks of the space industry </p>
           </header>
           <article>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla hendrerit vitae nulla at ultricies. Suspendisse consequat tempor mi, eu tristique mi.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim convallis dolor at viverra. Nullam consequat nulla enim, eu vulputate magna varius quis.
-              Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            <p>
+              This year the Montreal Space Symposium is thrilled to present an incredible group of dynamic speakers spread across many different fields to present to you the latest and greatest of the Canadian space industry!
+            </p>
+            <p>
+              If you are interested in participating in our speaker series, please contact us at <a href="mailto:montrealspacesymposium@gmail.com">montrealspacesymposium@gmail.com</a>.
             </p>
           </article>
         </div>
         <div class="row clearfix speaker-grid">
-          <div class="col-md-4 col-sm-6 col-xs-6">
-            <div class="section no-padding">
-              <figure>
-                <img src="img/speakers/speaker1.jpg" alt="Speaker" class="img-responsive"/>
-                <figcaption class="speaker-info">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla hendrerit vitae nulla at ultricies. Suspendisse consequat tempor mi, eu tristique mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim convallis dolor at viverra.
-                </figcaption>
-              </figure>
-              <div class="speaker clearfix">
-                <div class="col-md-10 col-sm-9 col-xs-9">
-                  <h6>Richard Doe</h6>
-                  <p>Vice President, Company Name</p>
-                </div>
-                <div class="col-md-2 col-sm-3 col-xs-3 readIcon"> <i class="fa fa-chevron-circle-down"></i> </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-6">
-            <div class="section no-padding">
-              <figure>
-                <img src="img/speakers/speaker2.jpg" alt="Speaker" class="img-responsive"/>
-                <figcaption class="speaker-info">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla hendrerit vitae nulla at ultricies. Suspendisse consequat tempor mi, eu tristique mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim convallis dolor at viverra.
-                </figcaption>
-              </figure>
-              <div class="speaker clearfix">
-                <div class="col-md-10 col-sm-9 col-xs-9">
-                  <h6>Christine Doe</h6>
-                  <p>CEO, Company Name</p>
-                </div>
-                <div class="col-md-2 col-sm-3 col-xs-3 readIcon"> <i class="fa fa-chevron-circle-down"></i> </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-6">
-            <div class="section no-padding">
-              <figure>
-                <img src="img/speakers/speaker3.jpg" alt="Speaker" class="img-responsive"/>
-                <figcaption class="speaker-info">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla hendrerit vitae nulla at ultricies. Suspendisse consequat tempor mi, eu tristique mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim convallis dolor at viverra.
-                </figcaption>
-              </figure>
-              <div class="speaker clearfix">
-                <div class="col-md-10 col-sm-9 col-xs-9">
-                  <h6>Jonathan Doe</h6>
-                  <p>Operations, Company Name</p>
-                </div>
-                <div class="col-md-2 col-sm-3 col-xs-3 readIcon"> <i class="fa fa-chevron-circle-down"></i> </div>
-              </div>
-            </div>
-          </div>
           <div class="col-md-4 col-sm-6 col-xs-6">
             <div class="section no-padding">
               <figure>
@@ -401,24 +361,28 @@
       <div class="container">
         <div class="section">
           <header class="page-head">
-            <h2>Partners/Sponsors</h2>
-            <p class="text-muted">Our Esteemed Partners/Sponsors for this event</p>
+            <h2>Sponsors</h2>
+            <p class="text-muted">Our Esteemed Sponsors for this event</p>
           </header>
           <article>
-            <p>Aliquam nulla mi, cursus ac tortor quis, fringilla viverra turpis. Donec tincidunt urna erat, in porttitor purus pharetra quis. Vestibulum rhoncus blandit suscipit.
-              Nullam id ullamcorper diam. Curabitur porttitor leo in euismod eleifend. Nulla ac nunc ac leo commodo ullamcorper. Integer tempus fermentum urna vitae dignissim.
-              Proin adipiscing neque at urna facilisis, nec mattis lacus laoreet. Nullam vitae feugiat lacus.
+            <p>
+              We would like to thank our sponsors and partners for their confidence in our work.
+              Our vision of the Montreal Space Symposium would not have become reality without the huge commitment and active contribution from our sponsors and partners.
+              Due to their support we are now able to offer this incredible event to friends and fellow space enthusiasts from all corners of the world.
+            </p>
+            <p>
+              If you are interested in helping make this event a reality, please contact us at <a href="mailto:montrealspacesymposium@gmail.com">montrealspacesymposium@gmail.com</a>.
             </p>
           </article>
           <div class="partner clearfix">
-            <a href="#" title="Partner Brand"> <img class="img-responsive" src="img/partners/1.png" alt="Partner Brand"/> </a>
-            <a href="#" title="Partner Brand"> <img class="img-responsive" src="img/partners/2.png" alt="Partner Brand"/> </a>
-            <a href="#" title="Partner Brand"> <img class="img-responsive" src="img/partners/3.png" alt="Partner Brand"/> </a>
-            <a href="#" title="Partner Brand"> <img class="img-responsive" src="img/partners/4.png" alt="Partner Brand"/> </a>
-            <a href="#" title="Partner Brand"> <img class="img-responsive" src="img/partners/1.png" alt="Partner Brand"/> </a>
-            <a href="#" title="Partner Brand"> <img class="img-responsive" src="img/partners/2.png" alt="Partner Brand"/> </a>
-            <a href="#" title="Partner Brand"> <img class="img-responsive" src="img/partners/3.png" alt="Partner Brand"/> </a>
-            <a href="#" title="Partner Brand"> <img class="img-responsive" src="img/partners/4.png" alt="Partner Brand"/> </a>
+            <a title="Partner Brand"> <img class="img-responsive" src="img/partners/1.png" alt="Partner Brand"/> </a>
+            <a title="Partner Brand"> <img class="img-responsive" src="img/partners/2.png" alt="Partner Brand"/> </a>
+            <a title="Partner Brand"> <img class="img-responsive" src="img/partners/3.png" alt="Partner Brand"/> </a>
+            <a title="Partner Brand"> <img class="img-responsive" src="img/partners/4.png" alt="Partner Brand"/> </a>
+            <a title="Partner Brand"> <img class="img-responsive" src="img/partners/1.png" alt="Partner Brand"/> </a>
+            <a title="Partner Brand"> <img class="img-responsive" src="img/partners/2.png" alt="Partner Brand"/> </a>
+            <a title="Partner Brand"> <img class="img-responsive" src="img/partners/3.png" alt="Partner Brand"/> </a>
+            <a title="Partner Brand"> <img class="img-responsive" src="img/partners/4.png" alt="Partner Brand"/> </a>
           </div>
         </div>
       </div>
@@ -636,9 +600,10 @@
           <header class="page-head colored clearfix">
             <div class="col-md-6 col-sm-12">
               <h3 class="subscribeHeading">Subscribe To Our Newsletter</h3>
-              <form action="form/subscribe.php" id="subscribeForm" method="post">
+              <form action="//mcgillspace.us16.list-manage.com/subscribe/post?u=6440336a0de6185994638b439&amp;id=fe5dcc06e9" method="post" id="subscribeForm" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <!-- <form action="form/subscribe.php" id="subscribeForm" method="post"> -->
                 <div class="form-row">
-                  <input type="email" id="emailSubscribe" name="emailSubscribe" class="form-control" placeholder="Enter Your Email Address Here..."/>
+                  <input type="email" id="emailSubscribe" name="EMAIL" class="form-control" placeholder="Enter Your Email Address Here..."/>
                   <input type="submit" id="sub-submit" name="sub-submit" value="" class=""/>
                 </div>
               </form>

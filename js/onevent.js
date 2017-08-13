@@ -1,6 +1,12 @@
 $(document).ready(function() {
 
     var END_DATE = "October 5, 2017 8:00:00";
+    var MAILCHIMP = {
+      // URL_BASE : 'https://us16.api.mailchimp.com',
+      URL_BASE : '//mcgillspace.us16.list-manage.com',
+      KEY : 'b3b20348afe430ea46d41668cc873ef9-us16',
+      LIST_ID : 'fe5dcc06e9',
+    };
 
     setTimeout(function() {
         $('#options').animate({
@@ -134,7 +140,7 @@ $(document).ready(function() {
             $(this).parent().addClass('active');
         }
     });
-    $('nav a[href^=#], a.top[href^=#]').click(function(event) {
+    $('nav a[href^="#"]').click(function(event) {
         event.preventDefault();
         $('html,body').animate({
             scrollTop: $(this.hash).offset().top - 80
@@ -146,98 +152,100 @@ $(document).ready(function() {
         $(this).prev("label").hide();
         $(this).prev().prev("label").hide();
     });
-    $("#subscribeForm").submit(function() {
-        var emailSubscribe = $("#emailSubscribe").val();
-        if (emailSubscribe == "") {
-            $('#emailSubscribe').addClass('reqfld');
-            $('<span class="error" style="display:none; color:#cc0000"><i class="fa fa-exclamation-circle"></i></span>').insertBefore('#emailSubscribe').fadeIn(400);
-            $("#emailSubscribe").focus(function() {
-                $('#emailSubscribe').removeClass('reqfld');
-                $(this).prev().fadeOut(400);
-            });
-            return false;
-        } else if (emailSubscribe.indexOf('@') == -1 || emailSubscribe.indexOf('.') == -1) {
-            $('#emailSubscribe').addClass('reqfld');
-            $('<span class="error" style="display:none;  color:#cc0000">Invalid!</span>').insertBefore('#emailSubscribe').fadeIn(400);
-            $("#emailSubscribe").focus(function() {
-                $('#emailSubscribe').removeClass('reqfld');
-                $(this).prev().fadeOut(400);
-            });
-            return false;
-        }
-        var dataString = 'emailSubscribe=' + emailSubscribe;
-        $.ajax({
-            type: "POST",
-            url: "form/subscribe.php",
-            data: dataString,
-            success: function() {
-                $("#subscribeForm").hide();
-                $("<div id='subscribesuccess' class='alert alert-success' style='border:#" + sub_successBox_Border_Color + " 1px " + sub_successBoxBorderStyle + "; background:#" + sub_successBoxColor + ";' ></div>").insertAfter('.subscribeHeading');
-                $('#subscribesuccess').html("<h5 style='color:#" + sub_textColor + ";'>" + sub_submitMessage + "</h5>").hide().delay(300).fadeIn(1500);
-                $('#subscribeForm').delay(6000).slideUp('fast');
-            }
-        });
-        return false;
-    });
+    // $("#subscribeForm").submit(function() {
+    //     var emailSubscribe = $("#emailSubscribe").val();
+    //     if (emailSubscribe == "") {
+    //         $('#emailSubscribe').addClass('reqfld');
+    //         $('<span class="error" style="display:none; color:#cc0000"><i class="fa fa-exclamation-circle"></i></span>').insertBefore('#emailSubscribe').fadeIn(400);
+    //         $("#emailSubscribe").focus(function() {
+    //             $('#emailSubscribe').removeClass('reqfld');
+    //             $(this).prev().fadeOut(400);
+    //         });
+    //         return false;
+    //     } else if (emailSubscribe.indexOf('@') == -1 || emailSubscribe.indexOf('.') == -1) {
+    //         $('#emailSubscribe').addClass('reqfld');
+    //         $('<span class="error" style="display:none;  color:#cc0000">Invalid!</span>').insertBefore('#emailSubscribe').fadeIn(400);
+    //         $("#emailSubscribe").focus(function() {
+    //             $('#emailSubscribe').removeClass('reqfld');
+    //             $(this).prev().fadeOut(400);
+    //         });
+    //         return false;
+    //     }
+    //     var dataString = 'emailSubscribe=' + emailSubscribe;
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "form/subscribe.php",
+    //         data: dataString,
+    //         success: function() {
+    //             $("#subscribeForm").hide();
+    //             $("<div id='subscribesuccess' class='alert alert-success' style='border:#" + sub_successBox_Border_Color + " 1px " + sub_successBoxBorderStyle + "; background:#" + sub_successBoxColor + ";' ></div>").insertAfter('.subscribeHeading');
+    //             $('#subscribesuccess').html("<h5 style='color:#" + sub_textColor + ";'>" + sub_submitMessage + "</h5>").hide().delay(300).fadeIn(1500);
+    //             $('#subscribeForm').delay(6000).slideUp('fast');
+    //         }
+    //     });
+    //     return false;
+    // });
     $('.loader').hide();
     $("#register input, #register textarea").focus(function() {
         $(this).prev("label").hide();
         $(this).prev().prev("label").hide();
     });
-    $("#register").submit(function() {
-        var name = $("#name").val();
-        if (name == "") {
-            $('#name').addClass('reqfld');
-            $('<span class="error" style="display:none; margin-top:0px; color:#cc0000"><i class="fa fa-exclamation-circle"></i></span>').insertBefore('#name').fadeIn(400);
-            $("#name").focus(function() {
-                $('#name').removeClass('reqfld');
-                $(this).prev().fadeOut(400);
-            });
-            return false;
-        }
-        var phone = $("#phone").val();
-        if (phone == "") {
-            $('#phone').addClass('reqfld');
-            $('<span class="error" style="display:none; color:#cc0000"><i class="fa fa-exclamation-circle"></i></span>').insertBefore('#phone').fadeIn(400);
-            $("#phone").focus(function() {
-                $('#phone').removeClass('reqfld');
-                $(this).prev().fadeOut(400);
-            });
-            return false;
-        }
+
+    function validateInput(fieldId, val) {
+      if (!val) {
+          $('#'+fieldId).addClass('reqfld');
+          $('<span class="error" style="display:none; margin-top:0px; color:#cc0000"><i class="fa fa-exclamation-circle"></i></span>').insertBefore('#'+fieldId).fadeIn(400);
+          $("#"+fieldId).focus(function() {
+              $('#'+fieldId).removeClass('reqfld');
+              $(this).prev().fadeOut(400);
+          });
+          return false;
+      } else if (fieldId === 'email' && (val.indexOf('@') == -1 || val.indexOf('.') == -1)) {
+          $('#'+fieldId).addClass('reqfld');
+          $('<span class="error" style="display:none;  color:#cc0000">Invalid!</span>').insertBefore('#'+fieldId).fadeIn(400);
+          $("#"+fieldId).focus(function() {
+              $('#email').removeClass('reqfld');
+              $(this).prev().fadeOut(400);
+          });
+          return false;
+      }
+      return true;
+    }
+
+    function registerSubmit(ev) {
+        ev.preventDefault();
+        var firstname = $("#firstname").val();
+        var lastname = $("#lastname").val();
         var email = $("#email").val();
-        if (email == "") {
-            $('#email').addClass('reqfld');
-            $('<span class="error" style="display:none; color:#cc0000"><i class="fa fa-exclamation-circle"></i></span>').insertBefore('#email').fadeIn(400);
-            $("#email").focus(function() {
-                $('#email').removeClass('reqfld');
-                $(this).prev().fadeOut(400);
-            });
-            return false;
-        } else if (email.indexOf('@') == -1 || email.indexOf('.') == -1) {
-            $('#email').addClass('reqfld');
-            $('<span class="error" style="display:none;  color:#cc0000">Invalid!</span>').insertBefore('#email').fadeIn(400);
-            $("#email").focus(function() {
-                $('#email').removeClass('reqfld');
-                $(this).prev().fadeOut(400);
-            });
-            return false;
+
+        var allValid = validateInput('firstname', firstname);
+        allValid = allValid && validateInput('lastname', lastname);
+        allValid = allValid && validateInput('email', email);
+
+        if(!allValid) {
+          return false;
         }
-        var comment = $("#comment").val();
-        if (comment == "") {
-            $('#comment').addClass('reqfld');
-            $('<span class="error" style="display:none; color:#cc0000"><i class="fa fa-exclamation-circle"></i></span>').insertBefore('#comment').fadeIn(400);
-            $("#comment").focus(function() {
-                $('#comment').removeClass('reqfld');
-                $(this).prev().fadeOut(400);
-            });
-            return false;
-        }
-        var dataString = 'name=' + name + '&email=' + email + '&phone=' + phone + '&comment=' + comment;
+
+        var dataString = JSON.stringify({
+          "email_address": email,
+          "status": "subscribed",
+          "merge_fields": {
+            "FNAME": firstname,
+            "LNAME": lastname
+          }
+        })
         $.ajax({
-            type: "POST",
-            url: "form/register.php",
-            data: dataString,
+            url: '//mcgillspace.us16.list-manage.com/subscribe/post?u=6440336a0de6185994638b439&amp;id=fe5dcc06e9',
+            // url: MAILCHIMP.URL_BASE + "/3.0/lists/"+MAILCHIMP.LIST_ID+"/members/",
+            dataType: "jsonp",
+            data: $('#register').serialize(),
+            // url: MAILCHIMP.URL_BASE + "/3.0/lists/"+MAILCHIMP.LIST_ID+"/members/",
+            // dataType: "json",
+            // headers: {
+            //   Authorization: 'apikey b3b20348afe430ea46d41668cc873ef9-us16',
+            // },
+            // contentType: "application/json; charset=utf-8",
+            // data: dataString,
             success: function() {
                 $("#register").animate({
                     opacity: '1'
@@ -250,7 +258,10 @@ $(document).ready(function() {
             }
         });
         return false;
-    });
+    }
+
+    window.registerSubmit = registerSubmit;
+    // $("#register").submit(registerSubmit);
     var getcolor = $('.speaker i').css("color");
     var matchColors = /rgb\((\d{1,3}), (\d{1,3}), (\d{1,3})\)/;
     var match = matchColors.exec(getcolor);
