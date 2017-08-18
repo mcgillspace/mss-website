@@ -1,4 +1,4 @@
-@charset "UTF-8";html,body,div,p,table,tr,td,th,tbody,tfoot,ul,li,ol,dl,dd,dt,fieldset,blockquote,cite,input,select,textarea,button,a,section,article,aside,header,footer,nav {
+﻿@charset "UTF-8";html,body,div,p,table,tr,td,th,tbody,tfoot,ul,li,ol,dl,dd,dt,fieldset,blockquote,cite,input,select,textarea,button,a,section,article,aside,header,footer,nav {
     font-size: 14px;
     font-weight: 400;
     line-height: 1.714em;
@@ -804,7 +804,24 @@ ul.li-blocks li strong {
     -webkit-filter: grayscale(100%);
 }
 
+#associations a img {
+    background-color: #ececec;
+    width: 25%;
+    float: left;
+    padding: 1px;
+    opacity: 0.5;
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    filter: gray;
+    -webkit-filter: grayscale(100%);
+}
+
 #partners a:hover img {
+    opacity: 1;
+    filter: none;
+    -webkit-filter: grayscale(0%);
+}
+
+#associations a:hover img {
     opacity: 1;
     filter: none;
     -webkit-filter: grayscale(0%);
@@ -1104,7 +1121,7 @@ ul.address li:first-child i {
     left: 1em;
 }
 
-a,#partners a img,#schedule .nav-tabs li,#schedule .nav-tabs li h5,.schedule-box ul.activities li,#schedule .nav-tabs li h5 small,#schedule .nav-tabs li i {
+a,#partners a img,#associations a img,#schedule .nav-tabs li,#schedule .nav-tabs li h5,.schedule-box ul.activities li,#schedule .nav-tabs li h5 small,#schedule .nav-tabs li i {
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
