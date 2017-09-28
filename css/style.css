@@ -588,6 +588,10 @@ h1.logo {
     padding: 3em 2em 2em 2em;
 }
 
+#schedule img.schedule-img {
+    width: 100%;
+}
+
 .tab-pane h3 i {
     display: none;
 }
