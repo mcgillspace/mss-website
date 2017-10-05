@@ -135,6 +135,10 @@ i {
     padding: 0.8em 1.5em;
 }
 
+.btn.download-guide {
+    margin-bottom: 10px;
+}
+
 .btn:hover,.btn:focus,.btn:active {
     background: #3d3d3d;
     color: #fff;
