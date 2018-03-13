@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    var END_DATE = "October 5, 2017 8:00:00";
+    var END_DATE = "October 18, 2018 8:00:00";
     var MAILCHIMP = {
       // URL_BASE : 'https://us16.api.mailchimp.com',
       URL_BASE : '//mcgillspace.us16.list-manage.com',
