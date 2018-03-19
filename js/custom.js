@@ -14,7 +14,7 @@ var sub_successBoxColor = "f9ffef";
 var sub_successBoxBorderStyle = "solid";
 var sub_successBox_Border_Color = "bede8f";
 var sub_textColor = "7a994c";
-jQuery.backstretch(["img/slider/slide1.jpg", "img/slider/slide2.jpg", "img/slider/slide3.jpg"], {
+jQuery.backstretch(["img/slider/slide1.png", "img/slider/slide2.png", "img/slider/slide3.png"], {
     fade: 1000,
     duration: 7000
 });
